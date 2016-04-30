@@ -26,6 +26,27 @@ namespace cimpoler_meta {
 }
 ```
 
+## Supports
+### OSes
+1. Windows
+2. Linux
+3. UNIX
+4. Mac OS X
+5. FreeBSD
+
+### Compilers
+1. Clang
+2. GCC
+3. Clang/C2
+4. MSVC
+
+### Standards
+1. C++
+	* 98
+	* 11
+	* 14
+2. C++/CLI
+
 ## Questions/issues
 We don't support your favourite compiler? The code is absolute shit? Your family dog just died?<br />
 No worries, fire up an issue on the [issue tracker](https://github.com/nabijaczleweli/cimpoler-meta/issues) and we'll fix you right up.
