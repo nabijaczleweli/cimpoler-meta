@@ -41,7 +41,9 @@
 #define CIMPOLER_META_OS_NAME "an unknown OS"
 #endif
 
-#ifdef __clang__
+#ifdef __c2__
+#define CIMPOLER_META_COMPILER_NAME "Clang/C2"
+#elif defined(__clang__)
 #define CIMPOLER_META_COMPILER_NAME "Clang"
 #elif defined(__GNUC__)
 #define CIMPOLER_META_COMPILER_NAME "GCC"
@@ -65,7 +67,9 @@
 
 namespace cimpoler_meta {
 	static inline std::string version() {
-#ifdef __clang__
+#ifdef __c2__
+		return std::to_string(__c2_version__);
+#elif defined(__clang__)
 		return std::to_string(__clang_major__) + '.' + std::to_string(__clang_minor__) + '.' + std::to_string(__clang_patchlevel__);
 #elif defined(__GNUC__)
 		return std::to_string(__GNUC__) + '.' + std::to_string(__GNUC_MINOR__) + '.' + std::to_string(__GNUC_PATCHLEVEL__);
