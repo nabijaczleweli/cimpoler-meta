@@ -65,6 +65,18 @@
 #define CIMPOLER_META_CPP_VER "an unknown standard"
 #endif
 
+#ifdef _CPPLIB_VER
+#define CIMPOLER_META_STDLIB "MSVC"
+#elif defined(__GLIBCPP__)
+#define CIMPOLER_META_STDLIB "libstdc++"
+#elif defined(_LIBCPP_VERSION)
+#define CIMPOLER_META_STDLIB "libc++"
+#elif defined(__INTEL_CXXLIB_ICC)
+#define CIMPOLER_META_STDLIB "Intel"
+#else
+#define CIMPOLER_META_STDLIB "an unknown standard library"
+#endif
+
 namespace cimpoler_meta {
 	static inline std::string version() {
 #ifdef __c2__

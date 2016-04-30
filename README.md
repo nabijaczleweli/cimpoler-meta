@@ -18,6 +18,11 @@ Header-only C++ compiler metadata extractor
 /// C string
 #define CIMPOLER_META_CPP_VER
 
+/// Simple name of the standard library or "an unknown standard library"
+///
+/// C string
+#define CIMPOLER_META_STDLIB
+
 namespace cimpoler_meta {
 	/// Returns the compiler's version in a human-readable format
 	///
@@ -46,6 +51,12 @@ namespace cimpoler_meta {
 	* 11
 	* 14
 2. C++/CLI
+
+### Standard libraries
+1. Dinkumware (MSVC's)
+2. libstdc++
+3. libc++
+4. Intel
 
 ## Questions/issues
 We don't support your favourite compiler? The code is absolute shit? Your family dog just died?<br />
