@@ -25,6 +25,7 @@
 
 
 #include <string>
+#include <ciso646>
 
 
 #ifdef _WIN32
@@ -67,7 +68,7 @@
 
 #ifdef _CPPLIB_VER
 #define CIMPOLER_META_STDLIB "MSVC"
-#elif defined(__GLIBCPP__)
+#elif defined(__GLIBCPP__) || defined(__GLIBCXX__)
 #define CIMPOLER_META_STDLIB "libstdc++"
 #elif defined(_LIBCPP_VERSION)
 #define CIMPOLER_META_STDLIB "libc++"
