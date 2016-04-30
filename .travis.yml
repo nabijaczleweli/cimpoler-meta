@@ -5,7 +5,7 @@ cache:
 
 matrix:
   include:
-    - env: CXX=g++-5 CC=gcc-5 DEPLOY=true
+    - env: CXX=g++-5 CC=gcc-5
       addons:
         apt:
           packages:
