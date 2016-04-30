@@ -51,6 +51,18 @@
 #define CIMPOLER_META_COMPILER_NAME "an unknown compiler"
 #endif
 
+#if __cplusplus == 201402L
+#define CIMPOLER_META_CPP_VER "C++14"
+#elif __cplusplus == 201103L
+#define CIMPOLER_META_CPP_VER "C++11"
+#elif __cplusplus == 199711L || __cplusplus == 199707L
+#define CIMPOLER_META_CPP_VER "C++98"
+#elif __cplusplus_cli == 200406L
+#define CIMPOLER_META_CPP_VER "C++/CLI"
+#else
+#define CIMPOLER_META_CPP_VER "an unknown standard"
+#endif
+
 namespace cimpoler_meta {
 	static inline std::string version() {
 #ifdef __clang__

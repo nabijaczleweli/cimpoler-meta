@@ -13,6 +13,11 @@ Header-only C++ compiler metadata extractor
 /// C string
 #define CIMPOLER_META_COMPILER_NAME
 
+/// Colloquial name of the standard supported or "an unknown standard"
+///
+/// C string
+#define CIMPOLER_META_CPP_VER
+
 namespace cimpoler_meta {
 	/// Returns the compiler's version in a human-readable format
 	///
