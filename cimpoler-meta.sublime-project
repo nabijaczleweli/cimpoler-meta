@@ -1,0 +1,39 @@
+{
+	"build_systems":
+	[
+		{
+			"working_dir": "$project_path",
+			"cmd": "make -j8",
+			"name": "Build cimpoler-meta examples"
+		}
+	],
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"name": "Source",
+			"path": "include"
+		},
+		{
+			"follow_symlinks": true,
+			"name": "Examples",
+			"path": "examples"
+		},
+		{
+			"file_include_patterns":
+			[
+				"*Makefile*"
+			],
+			"folder_exclude_patterns":
+			[
+				"*"
+			],
+			"name": "Makefiles",
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"tab_size": 2
+	}
+}

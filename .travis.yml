@@ -1,0 +1,25 @@
+language: generic
+sudo: false
+cache:
+  apt: true
+
+matrix:
+  include:
+    - env: CXX=g++-5 CC=gcc-5 DEPLOY=true
+      addons:
+        apt:
+          packages:
+            - g++-5
+          sources: &sources
+            - r-packages-precise
+            - llvm-toolchain-precise-3.8
+    - env: CXX=clang++-3.8 CC=clang-3.8
+      addons:
+        apt:
+          packages:
+            - clang-3.8
+          sources: *sources
+
+script:
+  - make -j$(nproc)
+  - for e in $(ls out/); do echo -n "$e: "; out/$e; done
