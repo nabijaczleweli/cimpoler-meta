@@ -19,6 +19,11 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
+#pragma once
+#ifndef CIMPOLER_META_HPP
+#define CIMPOLER_META_HPP
+
+
 #include <string>
 
 
@@ -37,13 +42,13 @@
 #endif
 
 #ifdef __clang__
-		#define CIMPOLER_META_COMPILER_NAME "Clang"
+#define CIMPOLER_META_COMPILER_NAME "Clang"
 #elif defined(__GNUC__)
-		#define CIMPOLER_META_COMPILER_NAME "GCC"
+#define CIMPOLER_META_COMPILER_NAME "GCC"
 #elif defined(_MSC_VER)
-		#define CIMPOLER_META_COMPILER_NAME "MSVC"
+#define CIMPOLER_META_COMPILER_NAME "MSVC"
 #else
-		#define CIMPOLER_META_COMPILER_NAME "an unknown compiler"
+#define CIMPOLER_META_COMPILER_NAME "an unknown compiler"
 #endif
 
 namespace cimpoler_meta {
@@ -59,3 +64,6 @@ namespace cimpoler_meta {
 #endif
 	}
 }
+
+
+#endif  // CIMPOLER_META_HPP
