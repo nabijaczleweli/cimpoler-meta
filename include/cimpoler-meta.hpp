@@ -24,18 +24,27 @@
 
 #ifdef _WIN32
 #define CIMPOLER_META_OS_NAME "Windows"
+#elif defined(__linux__)
+#define CIMPOLER_META_OS_NAME "Linux"
 #elif defined(unix) || defined(__unix__) || defined(__unix)
 #define CIMPOLER_META_OS_NAME "UNIX"
 #elif defined(__APPLE__)
 #define CIMPOLER_META_OS_NAME "Mac OS X"
-#elif defined(__linux__)
-#define CIMPOLER_META_OS_NAME "Linux"
 #elif defined(__FreeBSD__)
 #define CIMPOLER_META_OS_NAME "FreeBSD"
 #else
 #define CIMPOLER_META_OS_NAME "an unknown OS"
 #endif
 
+#ifdef __clang__
+		#define CIMPOLER_META_COMPILER_NAME "Clang"
+#elif defined(__GNUC__)
+		#define CIMPOLER_META_COMPILER_NAME "GCC"
+#elif defined(_MSC_VER)
+		#define CIMPOLER_META_COMPILER_NAME "MSVC"
+#else
+		#define CIMPOLER_META_COMPILER_NAME "an unknown compiler"
+#endif
 
 namespace cimpoler_meta {
 	static inline std::string version() {
