@@ -92,6 +92,22 @@ namespace cimpoler_meta {
 		static_assert(false, "Unsupported compiler");
 #endif
 	}
+
+	static inline std::string stdlib_version() {
+#ifdef _CPPLIB_VER
+		return std::to_string(_CPPLIB_VER);
+#elif defined(__GLIBCPP__)
+		return std::to_string(__GLIBCPP__);
+#elif defined(__GLIBCXX__)
+		return std::to_string(__GLIBCXX__);
+#elif defined(_LIBCPP_VERSION)
+		return std::to_string(_LIBCPP_VERSION);
+#elif defined(__INTEL_CXXLIB_ICC)
+		return "unversioned";
+#else
+		return "Unsupported standard library";
+#endif
+	}
 }
 
 

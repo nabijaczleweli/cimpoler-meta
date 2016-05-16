@@ -28,6 +28,13 @@ namespace cimpoler_meta {
 	///
 	/// Will fail to compile on an unsupported compiler
 	std::string version();
+
+	/// Returns the standard library implementation's version
+	///
+	/// NOTE: does not work with Intel's stdlib as it's not versioned
+	///
+	/// Will fail to compile on an unsupported stdandard library implementation
+	std::string stdlib_version();
 }
 ```
 
